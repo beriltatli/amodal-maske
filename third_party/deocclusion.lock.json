@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/XiaohangZhan/deocclusion.git",
+  "commit": "ac543f9a54f4cb8baf0774bdb5f8638eadf8b57c",
+  "checked_at": "2026-09-07",
+  "license": "Apache-2.0",
+  "configuration": "experiments/COCOA/pcnet_m/config.yaml",
+  "demo": "demos/demo_cocoa.ipynb"
+}

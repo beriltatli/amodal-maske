@@ -1,0 +1,211 @@
+[
+  {
+    "instance": 0,
+    "visible_pixels": 1054,
+    "predicted_pixels": 1054,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 1,
+    "visible_pixels": 5676,
+    "predicted_pixels": 5676,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 2,
+    "visible_pixels": 11535,
+    "predicted_pixels": 11527,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 31,
+    "lost_visible_pixels": 39,
+    "amodal_iou": 0.9939477779699118,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 3,
+    "visible_pixels": 4479,
+    "predicted_pixels": 4479,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 4,
+    "visible_pixels": 2143,
+    "predicted_pixels": 2143,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 5,
+    "visible_pixels": 3701,
+    "predicted_pixels": 3701,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 6,
+    "visible_pixels": 6449,
+    "predicted_pixels": 6473,
+    "hidden_gt_pixels": 32,
+    "added_pixels": 24,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9987656225891066,
+    "visible_baseline_iou": 0.9950624903564265,
+    "hidden_iou": 0.75
+  },
+  {
+    "instance": 7,
+    "visible_pixels": 15562,
+    "predicted_pixels": 22236,
+    "hidden_gt_pixels": 6436,
+    "added_pixels": 6765,
+    "lost_visible_pixels": 91,
+    "amodal_iou": 0.9808338184586449,
+    "visible_baseline_iou": 0.7074279479952723,
+    "hidden_iou": 0.9502142118481312
+  },
+  {
+    "instance": 8,
+    "visible_pixels": 702,
+    "predicted_pixels": 706,
+    "hidden_gt_pixels": 3,
+    "added_pixels": 4,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9985835694050992,
+    "visible_baseline_iou": 0.9957446808510638,
+    "hidden_iou": 0.75
+  },
+  {
+    "instance": 9,
+    "visible_pixels": 1569,
+    "predicted_pixels": 1569,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 10,
+    "visible_pixels": 3711,
+    "predicted_pixels": 3711,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 11,
+    "visible_pixels": 603,
+    "predicted_pixels": 603,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 12,
+    "visible_pixels": 3801,
+    "predicted_pixels": 3801,
+    "hidden_gt_pixels": 29,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9924281984334203,
+    "visible_baseline_iou": 0.9924281984334203,
+    "hidden_iou": 0.0
+  },
+  {
+    "instance": 13,
+    "visible_pixels": 12134,
+    "predicted_pixels": 16468,
+    "hidden_gt_pixels": 4684,
+    "added_pixels": 4540,
+    "lost_visible_pixels": 206,
+    "amodal_iou": 0.9631966971394869,
+    "visible_baseline_iou": 0.7214888809608753,
+    "hidden_iou": 0.9132959966811864
+  },
+  {
+    "instance": 14,
+    "visible_pixels": 2253,
+    "predicted_pixels": 3342,
+    "hidden_gt_pixels": 1709,
+    "added_pixels": 1089,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.8430481958112541,
+    "visible_baseline_iou": 0.5686521958606764,
+    "hidden_iou": 0.6362573099415205
+  },
+  {
+    "instance": 15,
+    "visible_pixels": 9449,
+    "predicted_pixels": 15584,
+    "hidden_gt_pixels": 7241,
+    "added_pixels": 6135,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9308405623691295,
+    "visible_baseline_iou": 0.5661473936488916,
+    "hidden_iou": 0.8409028351224883
+  },
+  {
+    "instance": 16,
+    "visible_pixels": 8084,
+    "predicted_pixels": 11436,
+    "hidden_gt_pixels": 2913,
+    "added_pixels": 3352,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9535835583035792,
+    "visible_baseline_iou": 0.7351095753387288,
+    "hidden_iou": 0.8431891732862606
+  },
+  {
+    "instance": 17,
+    "visible_pixels": 15205,
+    "predicted_pixels": 20446,
+    "hidden_gt_pixels": 5158,
+    "added_pixels": 5364,
+    "lost_visible_pixels": 123,
+    "amodal_iou": 0.9778510153637378,
+    "visible_baseline_iou": 0.7466974414379021,
+    "hidden_iou": 0.9384672070744289
+  },
+  {
+    "instance": 18,
+    "visible_pixels": 7462,
+    "predicted_pixels": 9593,
+    "hidden_gt_pixels": 2097,
+    "added_pixels": 2240,
+    "lost_visible_pixels": 109,
+    "amodal_iou": 0.9671322925225966,
+    "visible_baseline_iou": 0.7806255884506748,
+    "hidden_iou": 0.907211961301671
+  }
+]

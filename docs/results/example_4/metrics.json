@@ -1,0 +1,112 @@
+[
+  {
+    "instance": 0,
+    "visible_pixels": 30171,
+    "predicted_pixels": 30178,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 53,
+    "lost_visible_pixels": 46,
+    "amodal_iou": 0.9967244573848597,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 1,
+    "visible_pixels": 14018,
+    "predicted_pixels": 13946,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 3,
+    "lost_visible_pixels": 75,
+    "amodal_iou": 0.9944369160544897,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 2,
+    "visible_pixels": 826,
+    "predicted_pixels": 826,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 3,
+    "visible_pixels": 4692,
+    "predicted_pixels": 4692,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 4,
+    "lost_visible_pixels": 4,
+    "amodal_iou": 0.9982964224872232,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 4,
+    "visible_pixels": 602,
+    "predicted_pixels": 602,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 5,
+    "visible_pixels": 32709,
+    "predicted_pixels": 40142,
+    "hidden_gt_pixels": 6486,
+    "added_pixels": 7492,
+    "lost_visible_pixels": 59,
+    "amodal_iou": 0.96252411814179,
+    "visible_baseline_iou": 0.8345197091465748,
+    "hidden_iou": 0.8113256446805753
+  },
+  {
+    "instance": 6,
+    "visible_pixels": 14336,
+    "predicted_pixels": 23249,
+    "hidden_gt_pixels": 7497,
+    "added_pixels": 8977,
+    "lost_visible_pixels": 64,
+    "amodal_iou": 0.9274872803454616,
+    "visible_baseline_iou": 0.6566207117665919,
+    "hidden_iou": 0.8197282668728598
+  },
+  {
+    "instance": 7,
+    "visible_pixels": 10030,
+    "predicted_pixels": 11725,
+    "hidden_gt_pixels": 751,
+    "added_pixels": 1695,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9137755102040817,
+    "visible_baseline_iou": 0.9303404136907523,
+    "hidden_iou": 0.4138728323699422
+  },
+  {
+    "instance": 8,
+    "visible_pixels": 694,
+    "predicted_pixels": 824,
+    "hidden_gt_pixels": 2472,
+    "added_pixels": 130,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.2602653190145294,
+    "visible_baseline_iou": 0.21920404295641188,
+    "hidden_iou": 0.052588996763754045
+  },
+  {
+    "instance": 9,
+    "visible_pixels": 839,
+    "predicted_pixels": 839,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  }
+]

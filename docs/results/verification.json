@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "examples": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "instances": 48,
+  "model_forward_calls": 148,
+  "checks": [
+    "checkpoint provenance",
+    "strict weight loading",
+    "nonzero model execution",
+    "binary masks",
+    "PNG/NPZ equality",
+    "occlusion matrix consistency",
+    "independently recomputed IoU and pixel counts"
+  ]
+}

@@ -1,0 +1,10 @@
+# Candidate support-package pins for Python 3.12 / Colab 2026.07.
+# CUDA execution has NOT been validated in this session.
+# Colab's preinstalled torch is retained; do not install the old upstream requirements.
+numpy==2.0.2
+Pillow==11.3.0
+matplotlib==3.10.3
+PyYAML==6.0.2
+pycocotools==2.0.10
+opencv-python-headless==4.11.0.86
+scikit-image==0.25.2

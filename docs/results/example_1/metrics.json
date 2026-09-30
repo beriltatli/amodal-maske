@@ -1,0 +1,24 @@
+[
+  {
+    "instance": 0,
+    "visible_pixels": 103074,
+    "predicted_pixels": 103070,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 365,
+    "lost_visible_pixels": 369,
+    "amodal_iou": 0.9929040303947254,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 1,
+    "visible_pixels": 59784,
+    "predicted_pixels": 87513,
+    "hidden_gt_pixels": 30354,
+    "added_pixels": 27951,
+    "lost_visible_pixels": 222,
+    "amodal_iou": 0.9649051010927753,
+    "visible_baseline_iou": 0.6632496838181455,
+    "hidden_iou": 0.9036502546689303
+  }
+]

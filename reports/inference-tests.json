@@ -1,0 +1,5 @@
+{
+  "cpu_repeat_example_4": "bit-identical arrays and order matrix",
+  "corrupt_png_rejected": true,
+  "unavailable_cuda_fails_without_predictions": true
+}

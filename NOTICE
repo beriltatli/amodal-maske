@@ -1,0 +1,17 @@
+PCNet-M amodal mask demo
+
+This project uses the official implementation of:
+Self-Supervised Scene De-occlusion, CVPR 2020
+Xiaohang Zhan, Xingang Pan, Bo Dai, Ziwei Liu, Dahua Lin, Chen Change Loy
+https://github.com/XiaohangZhan/deocclusion
+Pinned commit: ac543f9a54f4cb8baf0774bdb5f8638eadf8b57c
+
+Upstream code is distributed under Apache License 2.0. Its license is retained
+in the downloaded source and generated runtime. Local adaptations replace
+deprecated NumPy aliases and place input tensors on the model's device.
+Network architecture, learned weights and inference algorithm are unchanged.
+
+COCOA demo photographs, annotations and pretrained weights originate from
+the upstream project and its linked distribution. They remain subject to
+their original terms; this project's software license does not relicense
+third-party data or model weights. Weights are downloaded, not committed.

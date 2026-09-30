@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-09-30T19:35:48.061385+00:00",
+  "examples": 5,
+  "instances": 48,
+  "model_forward_calls": 148,
+  "mean_amodal_iou": 0.9605080431208447,
+  "mean_visible_baseline_iou": 0.8575797775643553,
+  "added_pixels": 168501,
+  "lost_visible_pixels": 3138,
+  "device": [
+    "cpu"
+  ],
+  "checkpoint_sha256": "3740e8f709f824068dd36be46bd44ffd18105c4f606c099789c93f3ae4b860f7",
+  "scope": "Five bundled COCOA demo images at most; descriptive metrics, not a dataset benchmark."
+}

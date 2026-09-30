@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "verified_at_local": "2026-10-01",
+  "notebook_url": "https://colab.research.google.com/drive/1linAtHf5f0WAKvW47AJtzjBfc03RulmI",
+  "runtime_version": "2026.07",
+  "device": "cuda",
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "cuda_build": "12.8",
+  "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "example": 4,
+  "instances": 10,
+  "model_forward_calls": 26,
+  "mean_amodal_iou": 0.9053510023632434,
+  "mean_visible_baseline_iou": 0.8640684877560332,
+  "elapsed_seconds": 18.03,
+  "checkpoint_sha256": "3740e8f709f824068dd36be46bd44ffd18105c4f606c099789c93f3ae4b860f7",
+  "results_folder": "results/colab-t4-20261001",
+  "verification": {
+    "status": "passed",
+    "examples": [
+      4
+    ],
+    "instances": 10,
+    "model_forward_calls": 26,
+    "checks": [
+      "checkpoint provenance",
+      "strict weight loading",
+      "nonzero model execution",
+      "binary masks",
+      "PNG/NPZ equality",
+      "occlusion matrix consistency",
+      "independently recomputed IoU and pixel counts"
+    ]
+  },
+  "scope": "One bundled demo example (4) on free Colab Tesla T4; not a full dataset benchmark."
+}

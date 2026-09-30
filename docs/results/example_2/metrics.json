@@ -1,0 +1,123 @@
+[
+  {
+    "instance": 0,
+    "visible_pixels": 10036,
+    "predicted_pixels": 10036,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 1,
+    "visible_pixels": 9004,
+    "predicted_pixels": 9004,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 2,
+    "visible_pixels": 5791,
+    "predicted_pixels": 7726,
+    "hidden_gt_pixels": 1900,
+    "added_pixels": 1935,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.9473285335354301,
+    "visible_baseline_iou": 0.7529580028604863,
+    "hidden_iou": 0.8038570084666039
+  },
+  {
+    "instance": 3,
+    "visible_pixels": 6493,
+    "predicted_pixels": 7416,
+    "hidden_gt_pixels": 971,
+    "added_pixels": 923,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 0.986648865153538,
+    "visible_baseline_iou": 0.869908896034298,
+    "hidden_iou": 0.8996990972918756
+  },
+  {
+    "instance": 4,
+    "visible_pixels": 22491,
+    "predicted_pixels": 50029,
+    "hidden_gt_pixels": 27483,
+    "added_pixels": 27698,
+    "lost_visible_pixels": 160,
+    "amodal_iou": 0.9903074932829137,
+    "visible_baseline_iou": 0.4500540280946092,
+    "hidden_iou": 0.9882179145348419
+  },
+  {
+    "instance": 5,
+    "visible_pixels": 18773,
+    "predicted_pixels": 18741,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 101,
+    "lost_visible_pixels": 133,
+    "amodal_iou": 0.987601992158525,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 6,
+    "visible_pixels": 1119,
+    "predicted_pixels": 1119,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 7,
+    "visible_pixels": 10117,
+    "predicted_pixels": 10475,
+    "hidden_gt_pixels": 832,
+    "added_pixels": 445,
+    "lost_visible_pixels": 87,
+    "amodal_iou": 0.9518950437317785,
+    "visible_baseline_iou": 0.9240113252351813,
+    "hidden_iou": 0.48661233993015135
+  },
+  {
+    "instance": 8,
+    "visible_pixels": 10221,
+    "predicted_pixels": 10221,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 1,
+    "lost_visible_pixels": 1,
+    "amodal_iou": 0.9998043435726863,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  },
+  {
+    "instance": 9,
+    "visible_pixels": 7246,
+    "predicted_pixels": 9891,
+    "hidden_gt_pixels": 2727,
+    "added_pixels": 2687,
+    "lost_visible_pixels": 42,
+    "amodal_iou": 0.9830288509533792,
+    "visible_baseline_iou": 0.7265617166349143,
+    "hidden_iou": 0.9538072897870805
+  },
+  {
+    "instance": 10,
+    "visible_pixels": 1016,
+    "predicted_pixels": 1016,
+    "hidden_gt_pixels": 0,
+    "added_pixels": 0,
+    "lost_visible_pixels": 0,
+    "amodal_iou": 1.0,
+    "visible_baseline_iou": 1.0,
+    "hidden_iou": null
+  }
+]

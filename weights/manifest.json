@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-07",
+  "source_folder": "https://drive.google.com/drive/folders/1O89ItVWucCoL_VxIbLM1XLxr9JFfyj_Y",
+  "filename": "COCOA_pcnet_m.pth.tar",
+  "file_id": "12T_PKk5vB59bbLRil7dJrlAP6oJZipny",
+  "download_url": "https://drive.google.com/uc?export=download&id=12T_PKk5vB59bbLRil7dJrlAP6oJZipny",
+  "bytes": 26870559,
+  "sha256": "3740e8f709f824068dd36be46bd44ffd18105c4f606c099789c93f3ae4b860f7",
+  "download_verified": true,
+  "verification": "curl exit 0; HTTP 200; Content-Length matched; SHA-256 calculated; legacy torch pickle header inspected without unpickling",
+  "torch_load_verified": true,
+  "inference_verified": true,
+  "hash_origin": "Computed locally from the official download; not a publisher-provided checksum.",
+  "inference_verified_at": "2026-09-30",
+  "inference_device": "cpu",
+  "inference_evidence": "docs/results/verification.json"
+}

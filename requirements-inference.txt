@@ -1,0 +1,4 @@
+# Python 3.12. CPU on macOS; CPU/CUDA on Linux.
+torch==2.11.0
+-r requirements-colab.txt
+nbformat==5.10.4

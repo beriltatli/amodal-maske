@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PCNet-M · Amodal mask explorer</title>
+<style>
+:root{color-scheme:light;--ink:#152d2a;--muted:#5b6d68;--line:#d6dfd8;--green:#19765b;--paper:#f4f6f0}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,sans-serif}
+header,main,footer{max-width:1320px;margin:auto;padding:28px 36px}header{border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-weight:750;letter-spacing:.08em;font-size:13px}.badge{background:#dcece0;color:#1e6249;padding:6px 12px;border-radius:30px;font-size:12px;font-weight:650}
+h1{font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.04em;margin:12px 0 16px}h2{font-size:20px;letter-spacing:-.02em}p{color:var(--muted);max-width:740px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--green);font-weight:700;margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin:28px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:white}.stat{padding:18px 24px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{font-size:27px;display:block}.stat span{font-size:12px;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:22px;align-items:end;margin:26px 0}label{font-size:12px;font-weight:650;display:flex;flex-direction:column;gap:7px}select,button{font:inherit;border:1px solid #b8c8be;border-radius:8px;padding:10px 14px;background:white;color:var(--ink)}select:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #55ad86;outline-offset:3px}button{cursor:pointer}.toggle{flex-direction:row;align-items:center;padding-bottom:10px}.toggle input{accent-color:var(--green)}
+.panels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.panel{background:white;border:1px solid var(--line);border-radius:12px;overflow:hidden}.panel h3{font-size:14px;margin:0;padding:15px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}.panel h3 span{font-size:11px;color:var(--muted);font-weight:500}canvas{display:block;width:100%;height:auto;background:#0e1717}.legend{display:flex;gap:20px;flex-wrap:wrap;margin:16px 0;color:var(--muted);font-size:12px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0}.box{background:white;padding:18px 22px;border:1px solid var(--line);border-radius:12px}.box h2{margin:0 0 12px}.box p{font-size:13px;margin:8px 0}.metric{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #eef1eb;font-size:13px}.metric:last-child{border:0}.table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;white-space:nowrap;text-align:left;font-size:13px}th,td{padding:12px 18px;border-bottom:1px solid #eef1eb}th{background:#eaf0e8}tr.selected{background:#e3f0e6}td button{padding:3px 9px;font-size:12px}.note{font-size:12px}footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line)}a{color:var(--green)}#status{font-size:12px;color:var(--muted);margin-left:auto}#error{color:#9d2424}
+@media(max-width:750px){header,main,footer{padding:20px}.stats{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line);padding:12px 16px}.panels,.detail{grid-template-columns:1fr}h1{font-size:36px}.controls{gap:14px}#status{width:100%;margin:0}}
+</style>
+</head>
+<body>
+<header><div class="brand">AMODAL / PCNET-M</div><div class="badge">Real model inference</div></header>
+<main>
+<div class="eyebrow">Seeing beyond the visible</div>
+<h1>Explore the missing shape.</h1>
+<p>Compare a visible object mask with the model’s predicted full shape and the annotated reference. Choose a scene and an object to inspect what PCNet-M completes behind an occluder.</p>
+<div class="stats" id="stats"></div>
+<div class="controls">
+<label>Scene<select id="scene" aria-label="Scene"></select></label>
+<label>Object<select id="object" aria-label="Object"></select></label>
+<label class="toggle"><input type="checkbox" id="photo" checked>Show photograph</label>
+<label>Mask opacity<input id="opacity" aria-label="Mask opacity" type="range" min="10" max="100" value="65"></label>
+<button id="download">Download predicted mask</button><span id="status" role="status"></span>
+</div>
+<p id="error" role="alert" hidden></p>
+<div class="panels">
+<section class="panel"><h3>Visible mask <span>MODEL INPUT</span></h3><canvas id="modal" aria-label="Visible input mask"></canvas></section>
+<section class="panel"><h3>Amodal prediction <span>PCNET-M OUTPUT</span></h3><canvas id="amodal_pred" aria-label="Predicted amodal mask"></canvas></section>
+<section class="panel"><h3>Amodal reference <span>GROUND TRUTH</span></h3><canvas id="amodal_gt" aria-label="Ground truth amodal mask"></canvas></section>
+</div>
+<div class="legend"><span><i class="dot" style="background:#46c4a0"></i>Visible region retained</span><span><i class="dot" style="background:#f1b755"></i>Region outside the visible mask</span><span>Turn off the photograph to inspect mask shapes.</span></div>
+<div class="detail"><section class="box"><h2 id="object-title">Object measurements</h2><div id="metrics"></div></section>
+<section class="box"><h2>What this result means</h2><p>The network receives masks of the target and occluding objects. The photograph is used for display; this model does not detect objects from RGB.</p><p>Amber marks pixels beyond the visible input. A completion can add incorrect pixels or remove visible pixels. Both are measured, and the raw prediction is shown without manual correction.</p><p>IoU measures overlap with the reference (higher is better). The visible-only baseline measures the same overlap before completion. These are bundled demo images, not a held-out benchmark.</p><p id="provenance"></p></section></div>
+<h2>Every object in this scene</h2><div class="table-wrap"><table><thead><tr><th>Object</th><th>Predicted IoU</th><th>Visible baseline</th><th>Added pixels</th><th>Lost visible pixels</th><th>Inspect</th></tr></thead><tbody id="objects"></tbody></table></div>
+<p class="note">Ground-truth masks are used only for evaluation and display. Initial object selection highlights the object with the largest annotated hidden region.</p>
+</main>
+<footer>PCNet-M · <a href="https://github.com/XiaohangZhan/deocclusion">Official de-occlusion research</a> · Offline results viewer. All displayed predictions were computed from the verified COCOA checkpoint. The viewer displays saved runs; it does not run inference in your browser.</footer>
+<script id="results" type="application/json">__RESULTS_JSON__</script>
+<script>
+'use strict';
+const data=JSON.parse(document.getElementById('results').textContent);
+const $=id=>document.getElementById(id), percent=x=>(100*x).toFixed(1)+'%';
+let active, selected=0, revision=0;
+const cached=new Map();
+function load(uri){if(!cached.has(uri))cached.set(uri,new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('Could not load a saved mask.'));img.src=uri}));return cached.get(uri)}
+function pixels(img){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;const ctx=c.getContext('2d');ctx.drawImage(img,0,0);return ctx.getImageData(0,0,c.width,c.height).data}
+const s=data.summary;
+$('stats').innerHTML=[[s.examples,'verified scenes'],[s.instances,'object masks'],[s.model_forward_calls,'model forward passes'],[percent(s.mean_amodal_iou),'demo mean amodal IoU']].map(([v,l])=>`<div class="stat"><strong>${v}</strong><span>${l}</span></div>`).join('');
+for(const item of data.examples)$('scene').add(new Option('COCOA / '+String(item.id).padStart(2,'0'),item.id));
+function chooseScene(){active=data.examples.find(e=>e.id===Number($('scene').value));$('object').replaceChildren();active.metrics.forEach((m,i)=>$('object').add(new Option('Object '+String(i).padStart(2,'0')+(m.hidden_gt_pixels?' · occluded':''),i)));selected=active.metrics.reduce((best,m,i)=>m.hidden_gt_pixels>active.metrics[best].hidden_gt_pixels?i:best,0);$('object').value=selected;render()}
+async function render(){const token=++revision;selected=Number($('object').value);const current=active;const index=selected;const m=current.metrics[index];$('status').textContent='Loading masks…';$('error').hidden=true;
+try{const [photo,visible,...images]=await Promise.all([load(current.image),load(current.masks.modal[index]),...['modal','amodal_pred','amodal_gt'].map(k=>load(current.masks[k][index]))]);if(token!==revision)return;
+const base=pixels(visible), keys=['modal','amodal_pred','amodal_gt'];
+keys.forEach((key,k)=>{const canvas=$(key);canvas.width=photo.width;canvas.height=photo.height;const ctx=canvas.getContext('2d');ctx.fillStyle='#0e1717';ctx.fillRect(0,0,canvas.width,canvas.height);if($('photo').checked)ctx.drawImage(photo,0,0);const mask=pixels(images[k]);const overlay=ctx.createImageData(canvas.width,canvas.height);for(let i=0;i<mask.length;i+=4){if(mask[i]>127){const color=base[i]>127?[70,196,160]:[241,183,85];overlay.data[i]=color[0];overlay.data[i+1]=color[1];overlay.data[i+2]=color[2];overlay.data[i+3]=$('photo').checked?Number($('opacity').value)*2.55:255}}const tmp=document.createElement('canvas');tmp.width=canvas.width;tmp.height=canvas.height;tmp.getContext('2d').putImageData(overlay,0,0);ctx.drawImage(tmp,0,0)});
+$('object-title').textContent='Object '+String(index).padStart(2,'0')+' / measurements';
+$('metrics').innerHTML=[['Predicted amodal IoU',percent(m.amodal_iou)],['Visible-only baseline IoU',percent(m.visible_baseline_iou)],['Hidden-region IoU',m.hidden_iou===null?'No annotated hidden region':percent(m.hidden_iou)],['Added / lost visible pixels',m.added_pixels.toLocaleString()+' / '+m.lost_visible_pixels.toLocaleString()]].map(([k,v])=>`<div class="metric"><span>${k}</span><strong>${v}</strong></div>`).join('');
+$('provenance').textContent=`Verified on ${current.run.device.toUpperCase()} · ${current.run.model_forward_calls} forward passes · ${current.run.elapsed_seconds.toFixed(1)} seconds. Checkpoint loaded with all keys matched.`;
+$('objects').innerHTML=current.metrics.map((item,i)=>`<tr class="${i===index?'selected':''}"><td>${String(i).padStart(2,'0')}</td><td>${percent(item.amodal_iou)}</td><td>${percent(item.visible_baseline_iou)}</td><td>${item.added_pixels.toLocaleString()}</td><td>${item.lost_visible_pixels.toLocaleString()}</td><td><button data-object="${i}" aria-label="Inspect object ${i}">View</button></td></tr>`).join('');$('status').textContent=`Scene ${current.id} · object ${index} · saved inference`;
+}catch(error){if(token!==revision)return;$('error').hidden=false;$('error').textContent=error.message;$('status').textContent='Display failed';}}
+$('scene').addEventListener('change',chooseScene);$('object').addEventListener('change',render);$('photo').addEventListener('change',render);$('opacity').addEventListener('input',render);$('objects').addEventListener('click',event=>{const button=event.target.closest('button[data-object]');if(button){$('object').value=button.dataset.object;render()}});
+$('download').addEventListener('click',()=>{const a=document.createElement('a');a.href=active.masks.amodal_pred[selected];a.download=`cocoa_${active.id}_object_${selected}_pcnet_m.png`;a.click()});
+$('scene').value=data.examples.some(e=>e.id===4)?4:data.examples[0].id;chooseScene();
+</script>
+</body></html>
